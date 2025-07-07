@@ -1,2 +1,9 @@
-<h1>Exam Registration App</h1>
-<router-outlet></router-outlet>
+<nav style="background:gray; padding:10px; margin: 0px;">
+  <a routerLink="/students" routerLinkActive="active" style="margin-right:10px; color:black; text-decoration:none;">Students</a>
+  <a routerLink="/subjects" routerLinkActive="active" style="margin-right:10px; color:black; text-decoration:none;">Subjects</a>
+  <a routerLink="/exams" routerLinkActive="active" style="color:black; text-decoration:none;">Exams</a>
+</nav>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
