@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Add Student</h2>
+
+<form [formGroup]="studentForm" (ngSubmit)="submit()">
+  <mat-dialog-content>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Student Number</mat-label>
+      <input matInput formControlName="number" type="text" />
+      <mat-error *ngIf="studentForm.get('number')?.hasError('required')">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="studentForm.get('name')?.hasError('required')">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Surname</mat-label>
+      <input matInput formControlName="surname" />
+      <mat-error *ngIf="studentForm.get('surname')?.hasError('required')">Required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Grade</mat-label>
+      <input matInput formControlName="grade" type="number" />
+      <mat-error *ngIf="studentForm.get('grade')?.hasError('required')">Required</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="studentForm.invalid">
+      Submit
+    </button>
+  </mat-dialog-actions>
+</form>
