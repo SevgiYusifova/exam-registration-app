@@ -1,0 +1,33 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "number": 1001,
+      "name": "Simba",
+      "surname": "Yusifov",
+      "grade": 5
+    },
+    {
+      "id": "2",
+      "number": 1001,
+      "name": "Sevgi",
+      "surname": "Yusifova",
+      "grade": 7
+    },
+    {
+      "id": "d9a8",
+      "number": "3",
+      "name": "Sevinc",
+      "surname": "Yusifova",
+      "grade": 5
+    },
+    {
+      "id": "f40e",
+      "number": "4",
+      "name": "Selcan",
+      "surname": "Tahirova",
+      "grade": 4
+    }
+  ],
+  "subjects": []
+}

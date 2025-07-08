@@ -1,0 +1,56 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.dialog-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.dialog-actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+mat-dialog-actions button {
+    min-width: 100px;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+mat-form-field {
+    width: 100%;
+}
