@@ -29,5 +29,21 @@
       "grade": 4
     }
   ],
-  "subjects": []
+  "subjects": [
+    {
+      "code": "11022",
+      "name": "Math",
+      "grade": "4",
+      "teacherName": "Lale",
+      "teacherSurname": "Quliyeva"
+    },
+    {
+      "id": "fa15",
+      "code": 12,
+      "name": "Math",
+      "teacherName": "Quliyeva",
+      "teacherSurname": "Ezize",
+      "grade": 3
+    }
+  ]
 }

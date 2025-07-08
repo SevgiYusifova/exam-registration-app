@@ -11,6 +11,7 @@ import { StudentFormComponent } from './modules/students/student-form/student-fo
 import { MaterialModule } from './shared/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SubjectFormComponent } from './modules/subjects/subject-form/subject-form.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     SubjectsComponent,
     ExamsComponent,
     StudentFormComponent,
+    SubjectFormComponent,
   ],
   imports: [
     BrowserModule,
