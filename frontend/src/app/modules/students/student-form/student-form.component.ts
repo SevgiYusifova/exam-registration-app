@@ -8,12 +8,10 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./student-form.component.scss']
 })
 export class StudentFormComponent implements OnInit {
-  @Output() formSubmit = new EventEmitter<any>();
 
   studentForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
-    private cdr: ChangeDetectorRef,
     private dialogRef: MatDialogRef<StudentFormComponent>
   ) { }
 
@@ -24,10 +22,6 @@ export class StudentFormComponent implements OnInit {
       surname: ['', Validators.required],
       grade: ['', Validators.required]
     });
-  }
-
-  ngAfterViewInit() {
-    this.cdr.detectChanges();
   }
 
   submit(): void {

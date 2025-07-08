@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Add Subject</h2>
+
+<form [formGroup]="subjectForm" (ngSubmit)="submit()">
+    <mat-dialog-content class="no-scroll">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Subject Code</mat-label>
+            <input matInput formControlName="code" type="number" />
+            <mat-error *ngIf="subjectForm.get('code')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+            <mat-error *ngIf="subjectForm.get('name')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Teacher Name</mat-label>
+            <input matInput formControlName="teacherName" />
+            <mat-error *ngIf="subjectForm.get('teacherName')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Teacher Surname</mat-label>
+            <input matInput formControlName="teacherSurname" />
+            <mat-error *ngIf="subjectForm.get('teacherSurname')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Grade</mat-label>
+            <input matInput formControlName="grade" type="number" />
+            <mat-error *ngIf="subjectForm.get('grade')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="subjectForm.invalid">
+            Submit
+        </button>
+    </mat-dialog-actions>
+</form>

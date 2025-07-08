@@ -34,14 +34,7 @@ export class StudentsComponent implements OnInit {
         });
       }
     });
-
-    dialogRef.componentInstance.formSubmit.subscribe((newStudent: Student) => {
-      this.studentService.addStudent(newStudent).subscribe(addedStudent => {
-        this.students.push(addedStudent);
-      });
-    });
   }
-
 
   getStudents() {
     this.studentService.getStudents().subscribe(data => {
