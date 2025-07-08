@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { StudentService } from 'src/app/services/student.service';
+import { Student } from 'src/app/models/student.model';
 
 @Component({
   selector: 'app-students',
@@ -9,22 +11,41 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  students: Student[] = []
+
+  constructor(private dialog: MatDialog,
+    private studentService: StudentService
+  ) { }
 
   ngOnInit(): void {
+    this.getStudents();
   }
 
 
   openAddStudentDialog(): void {
     const dialogRef = this.dialog.open(StudentFormComponent, {
       width: '800px',
-      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        //
+        this.studentService.addStudent(result).subscribe(addedStudent => {
+          this.students.push(addedStudent);
+        });
       }
+    });
+
+    dialogRef.componentInstance.formSubmit.subscribe((newStudent: Student) => {
+      this.studentService.addStudent(newStudent).subscribe(addedStudent => {
+        this.students.push(addedStudent);
+      });
+    });
+  }
+
+
+  getStudents() {
+    this.studentService.getStudents().subscribe(data => {
+      this.students = data;
     });
   }
 }

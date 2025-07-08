@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-student-form',
@@ -12,7 +13,8 @@ export class StudentFormComponent implements OnInit {
   studentForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private dialogRef: MatDialogRef<StudentFormComponent>
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +32,7 @@ export class StudentFormComponent implements OnInit {
 
   submit(): void {
     if (this.studentForm.valid) {
-      this.formSubmit.emit(this.studentForm.value);
+      this.dialogRef.close(this.studentForm.value);
     }
   }
 }
