@@ -1,8 +1,10 @@
-<h2>Exams list</h2>
+<div class="container">
+    <h2>Exams list</h2>
 
-<button mat-raised-button color="primary" (click)="openAddExamDialog()">
-    Add exam
-</button>
+    <button mat-raised-button color="primary" (click)="openAddExamDialog()">
+        Add exam
+    </button>
 
-<app-table [dataSource]="exams" [columns]="examColumns">
-</app-table>
+    <app-table [dataSource]="exams" [columns]="examColumns">
+    </app-table>
+</div>

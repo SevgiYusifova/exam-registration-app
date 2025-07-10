@@ -1,8 +1,10 @@
-<h2>Subjects list</h2>
+<div class="container">
+    <h2>Subjects list</h2>
 
-<button mat-raised-button color="primary" (click)="openAddSubjectDialog()">
-    Add Subject
-</button>
+    <button mat-raised-button color="primary" (click)="openAddSubjectDialog()">
+        Add Subject
+    </button>
 
-<app-table [dataSource]="subjects" [columns]="subjectColumns">
-</app-table>
+    <app-table [dataSource]="subjects" [columns]="subjectColumns">
+    </app-table>
+</div>

@@ -1,8 +1,11 @@
-<h2>Students list</h2>
+<div class="container">
+  <h2>Students list</h2>
 
-<button mat-raised-button color="primary" (click)="openAddStudentDialog()">
-  Add Student
-</button>
+  <button mat-raised-button color="primary" (click)="openAddStudentDialog()">
+    Add Student
+  </button>
 
-<app-table [dataSource]="students" [columns]="studentColumns">
-</app-table>
+  <app-table [dataSource]="students" [columns]="studentColumns">
+  </app-table>
+
+</div>
