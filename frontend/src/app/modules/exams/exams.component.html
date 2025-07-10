@@ -1,1 +1,16 @@
-<p>exams works!</p>
+<p>Exams list</p>
+
+<ul *ngIf="exams.length > 0; else noData">
+    <li *ngFor="let exam of exams">
+        {{ exam.subjectCode }} - {{ exam.studentNumber }} {{ exam.examDate }} (Grade {{
+        exam.grade }})
+    </li>
+</ul>
+
+<ng-template #noData>
+    <p>No exams found.</p>
+</ng-template>
+
+<button mat-raised-button color="primary" (click)="openAddExamDialog()">
+    Add exam
+</button>
