@@ -39,6 +39,7 @@ export class StudentsComponent implements OnInit {
       if (result) {
         this.studentService.addStudent(result).subscribe(addedStudent => {
           this.students.push(addedStudent);
+          this.students = [...this.students];
         });
       }
     });

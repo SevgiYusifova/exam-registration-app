@@ -39,6 +39,7 @@ export class SubjectsComponent implements OnInit {
       if (result) {
         this.subjectService.addSubject(result).subscribe(addedSubject => {
           this.subjects.push(addedSubject);
+          this.subjects = [...this.subjects];
         });
       }
     });

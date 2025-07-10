@@ -40,6 +40,7 @@ export class ExamsComponent implements OnInit {
       if (result) {
         this.examService.addExam(result).subscribe(addedExam => {
           this.exams.push(addedExam);
+          this.exams = [...this.exams];
         });
       }
     });
