@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Add Subject</h2>
+
+<form [formGroup]="examForm" (ngSubmit)="submit()">
+    <mat-dialog-content class="no-scroll">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Subject Code</mat-label>
+            <input matInput formControlName="subjectCode" type="number" />
+            <mat-error *ngIf="examForm.get('subjectCode')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Student Number</mat-label>
+            <input matInput formControlName="studentNumber" />
+            <mat-error *ngIf="examForm.get('studentNumber')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Exam Date</mat-label>
+            <input matInput formControlName="examDate" />
+            <mat-error *ngIf="examForm.get('examDate')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Grade</mat-label>
+            <input matInput formControlName="grade" type="number" />
+            <mat-error *ngIf="examForm.get('grade')?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="examForm.invalid">
+            Submit
+        </button>
+    </mat-dialog-actions>
+</form>
