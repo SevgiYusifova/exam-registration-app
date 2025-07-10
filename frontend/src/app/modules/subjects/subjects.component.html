@@ -1,16 +1,8 @@
-<p>subjects list</p>
-
-<ul *ngIf="subjects.length > 0; else noData">
-    <li *ngFor="let subject of subjects">
-        {{ subject.code }} - {{ subject.name }} {{ subject.teacherName }} {{ subject.teacherSurname }} (Grade {{
-        subject.grade }})
-    </li>
-</ul>
-
-<ng-template #noData>
-    <p>No subjects found.</p>
-</ng-template>
+<h2>Subjects list</h2>
 
 <button mat-raised-button color="primary" (click)="openAddSubjectDialog()">
     Add Subject
 </button>
+
+<app-table [dataSource]="subjects" [columns]="subjectColumns">
+</app-table>

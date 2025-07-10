@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SubjectFormComponent } from './modules/subjects/subject-form/subject-form.component';
 import { ExamFormComponent } from './modules/exams/exam-form/exam-form.component';
+import { TableComponent } from './shared/table/table.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ExamFormComponent } from './modules/exams/exam-form/exam-form.component
     StudentFormComponent,
     SubjectFormComponent,
     ExamFormComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,

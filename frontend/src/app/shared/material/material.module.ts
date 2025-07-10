@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   exports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }
