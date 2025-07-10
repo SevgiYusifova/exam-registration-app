@@ -22,8 +22,11 @@
 
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Grade</mat-label>
-      <input matInput formControlName="grade" type="number" />
+      <input matInput formControlName="grade" type="number" min="1" max="11" />
       <mat-error *ngIf="studentForm.get('grade')?.hasError('required')">Required</mat-error>
+      <mat-error *ngIf="studentForm.get('grade')?.hasError('min') || studentForm.get('grade')?.hasError('max')">
+        Grade must be between 1 and 11
+      </mat-error>
     </mat-form-field>
   </mat-dialog-content>
 
