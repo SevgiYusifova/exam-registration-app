@@ -1,15 +1,9 @@
 <p>students list</p>
 
-<ul *ngIf="students.length > 0; else noData">
-  <li *ngFor="let student of students">
-    {{ student.number }} - {{ student.name }} {{ student.surname }} (Grade {{ student.grade }})
-  </li>
-</ul>
-
-<ng-template #noData>
-  <p>No students found.</p>
-</ng-template>
 
 <button mat-raised-button color="primary" (click)="openAddStudentDialog()">
   Add Student
 </button>
+
+<app-table [dataSource]="students" [columns]="studentColumns">
+</app-table>

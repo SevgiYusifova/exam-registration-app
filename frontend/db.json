@@ -46,5 +46,19 @@
       "grade": 3
     }
   ],
-  "exams": []
+  "exams": [
+    {
+      "subjectCode": "MAT",
+      "studentNumber": "12345",
+      "examDate": "2025-07-08",
+      "grade": 5
+    },
+    {
+      "id": "d306",
+      "subjectCode": 45,
+      "studentNumber": "35",
+      "examDate": "34-21",
+      "grade": 5
+    }
+  ]
 }

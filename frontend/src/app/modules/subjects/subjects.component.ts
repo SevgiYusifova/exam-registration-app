@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SubjectService } from 'src/app/services/subject.service';
 import { SubjectFormComponent } from './subject-form/subject-form.component';
 import { Subject } from 'src/app/models/subject.model';
+import { TableColumn } from 'src/app/models/table-settings';
 
 @Component({
   selector: 'app-subjects',
@@ -11,7 +12,16 @@ import { Subject } from 'src/app/models/subject.model';
 })
 export class SubjectsComponent implements OnInit {
 
+  subjectColumns: TableColumn[] = [
+    { key: 'code', label: 'Subject Code' },
+    { key: 'name', label: 'Subject Name' },
+    { key: 'class', label: 'Class' },
+    { key: 'teacherName', label: 'Teacher Name' },
+    { key: 'teacherSurname', label: 'Teacher Surname' }
+  ];
+
   subjects: Subject[] = []
+  dataSource: any[] = [];
 
   constructor(private dialog: MatDialog,
     private subjectService: SubjectService) { }
