@@ -17,7 +17,7 @@ export class SubjectFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.subjectForm = this.fb.group({
-      code: ['', Validators.required],
+      code: ['', [Validators.required, Validators.pattern(/^[A-Z0-9]*$/)]],
       name: ['', Validators.required],
       teacherName: ['', Validators.required],
       teacherSurname: ['', Validators.required],

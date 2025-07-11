@@ -17,10 +17,10 @@ export class ExamFormComponent {
     private dialogRef: MatDialogRef<StudentFormComponent>
   ) {
     this.examForm = this.fb.group({
-      subjectCode: ['', Validators.required],
+      subjectCode: ['', [Validators.required, Validators.pattern(/^[A-Z0-9]*$/)]],
       studentNumber: [null, Validators.required],
       examDate: ['', Validators.required],
-      grade: [null, [Validators.required, Validators.min(0), Validators.max(10)]]
+      grade: ['', [Validators.required, Validators.min(0), Validators.max(11)]]
     });
   }
 

@@ -4,8 +4,10 @@
     <mat-dialog-content class="no-scroll">
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Subject Code</mat-label>
-            <input matInput formControlName="subjectCode" type="number" />
+            <input matInput formControlName="subjectCode" type="text" maxlength="3" pattern="\d*" />
             <mat-error *ngIf="examForm.get('subjectCode')?.hasError('required')">Required</mat-error>
+            <mat-error *ngIf="examForm.get('subjectCode')?.hasError('pattern')">Only uppercase letters or
+                numbers</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">
@@ -22,8 +24,11 @@
 
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Grade</mat-label>
-            <input matInput formControlName="grade" type="number" />
+            <input matInput formControlName="grade" type="number" min="1" max="11" />
             <mat-error *ngIf="examForm.get('grade')?.hasError('required')">Required</mat-error>
+            <mat-error *ngIf="examForm.get('grade')?.hasError('min') || examForm.get('grade')?.hasError('max')">
+                Grade must be between 1 and 11
+            </mat-error>
         </mat-form-field>
     </mat-dialog-content>
 

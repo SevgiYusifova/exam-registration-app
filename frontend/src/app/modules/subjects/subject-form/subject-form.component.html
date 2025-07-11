@@ -4,8 +4,10 @@
     <mat-dialog-content class="no-scroll">
         <mat-form-field appearance="outline" class="full-width">
             <mat-label>Subject Code</mat-label>
-            <input matInput formControlName="code" type="number" />
+            <input matInput formControlName="code" type="text" maxlength="3" pattern="\d*" />
             <mat-error *ngIf="subjectForm.get('code')?.hasError('required')">Required</mat-error>
+            <mat-error *ngIf="subjectForm.get('code')?.hasError('pattern')">Only uppercase letters or
+                numbers</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="full-width">

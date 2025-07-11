@@ -20,7 +20,7 @@ export class StudentFormComponent implements OnInit {
       number: ['', Validators.required],
       name: ['', Validators.required],
       surname: ['', Validators.required],
-      grade: ['', Validators.required]
+      grade: ['', [Validators.required, Validators.min(0), Validators.max(11)]]
     });
   }
 
