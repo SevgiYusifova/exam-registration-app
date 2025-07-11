@@ -9,7 +9,7 @@ A school exam registration system that allows administrators to register subject
 - JSON Server (mock API)
 - SCSS
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Clone the repository
 
